@@ -1,0 +1,30 @@
+header {
+  height: 10%;
+  background: aliceblue;
+}
+
+section {
+  height: 80%;
+}
+
+header, section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background: darkgray;
+  height: 10%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.text-footer {
+  margin-right: 10px;
+  padding-right: 10px;
+
+  font-size: small;
+}
