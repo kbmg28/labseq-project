@@ -3,18 +3,19 @@ header {
   background: aliceblue;
 }
 
-section {
+main {
+  background: gray;
   height: 80%;
 }
 
-header, section {
+header, main {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 footer {
-  background: darkgray;
+  background: lightgray;
   height: 10%;
 
   display: flex;

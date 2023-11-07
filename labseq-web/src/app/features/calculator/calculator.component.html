@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-content>
+    <h3 style="color: white; text-align: center;">
+      Calculator
+    </h3>
+    <div class="align-button">
+      <mat-form-field class="input-value">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [min]="min" [max]="max" [(ngModel)]="value">
+      </mat-form-field>
+      <button mat-flat-button color="primary">Calculate</button>
+    </div>
+    <div>
+      <mat-slider [min]="min" [max]="max">
+        <input matSliderThumb [(ngModel)]="value" #slider>
+      </mat-slider>
+    </div>
+    <div class="result">
+      Result: {{res}}
+    </div>
+  </mat-card-content>
+</mat-card>
