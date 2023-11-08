@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  backend:
+    container_name: back
+    build:
+      context: ./ws-labseq/
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+  frontend:
+    container_name: web
+    build:
+      context: ./labseq-web
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
