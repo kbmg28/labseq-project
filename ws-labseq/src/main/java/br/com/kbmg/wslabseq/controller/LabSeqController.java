@@ -1,5 +1,6 @@
 package br.com.kbmg.wslabseq.controller;
 
+import br.com.kbmg.wslabseq.model.LabSeqResponse;
 import br.com.kbmg.wslabseq.service.LabSeqService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,14 +22,15 @@ public class LabSeqController {
     private final LabSeqService labSeqService;
 
     @GetMapping("/{n}")
-    public ResponseEntity<String> getLabSeqResult(@PathVariable("n") Integer valueToCalculate) {
+    public ResponseEntity<LabSeqResponse> getLabSeqResult(@PathVariable("n") Integer valueToCalculate) {
         if (valueToCalculate < 0) {
-            return new ResponseEntity<>("Param must be greater than or equal to zero", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new LabSeqResponse("Param must be greater than or equal to zero"),
+                    HttpStatus.BAD_REQUEST);
         }
 
         String result = labSeqService.getResultValue(valueToCalculate).toString();
 
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        return new ResponseEntity<>(new LabSeqResponse(result), HttpStatus.OK);
     }
 
 }
