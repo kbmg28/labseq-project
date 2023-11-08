@@ -11,6 +11,8 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
+import {ApiModule, BASE_PATH} from "./open-api";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import {MatButtonModule} from "@angular/material/button";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ApiModule,
+    HttpClientModule,
     MatSliderModule,
     MatFormFieldModule,
     MatInputModule,
@@ -28,7 +32,9 @@ import {MatButtonModule} from "@angular/material/button";
     MatCardModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [
+    { provide: BASE_PATH, useValue: "http://127.0.0.1:8080" }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
